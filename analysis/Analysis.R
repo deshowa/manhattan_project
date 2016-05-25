@@ -76,7 +76,7 @@ bk$land.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$land.square.feet))
 ## Change sale.date to Date forat in  R
 ## had to change this line to use a specific format of m-d-y
 
-bk$sale.date <- as.Date(bk$sale.date, "%m-%d-%y")
+bk$sale.date <- as.Date(bk$sale.date, "%m/%d/%Y")
 
 #Manhattan data read in year.built as int, so this line doesn't look needed
 bk$year.built <- as.numeric((bk$year.built))
@@ -96,8 +96,23 @@ hist(sale.price.n)
 
 # Something weird here
 
+hist(sale.price.n)
 
 hist(sale.price.n[sale.price.n>0])
+
+#That didn't do it.  If we check summary we can see a huge range
+summary(sale.price.n)
+
+#Max is 4.1 x 10^9....yes that's billions.  So maybe the log histogram will be more informative
+
+hist(log(bk$sale.price.n, base = 10))
+
+#or we can limit the histogram to a lesser value, since quartile 3 is $2MM
+hist(sale.price.n[sale.price.n<100e6])
+
+#but that still shows one big cluster
+
+#there's no zero's in our set
 
 hist(gross.sqft[sale.price.n==0])
 
