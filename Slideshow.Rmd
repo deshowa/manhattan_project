@@ -8,11 +8,15 @@ Keep_md: true
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Summary of Raw Data
-Here is a summary of the Raw Data from the Rolling Sales for Manhattan
+```{r Set Python Path, include=FALSE}
+PATH.0 <- Sys.getenv("PATH")
+PATH.1 <- paste(PATH.0, ";C:\\Perl\\bin;C:\\Perl64\\bin;C:\\Perl\\site\\bin;C:\\Perl64\\site\\bin")
+Sys.setenv("PATH"=PATH.1) 
+```
+
+## Analysis of Data
+Here is an analysis of the Data from the Rolling Sales for Manhattan
 
 ```{r summary}
-data.path <- paste("analysis/data/rollingsales_manhattan.csv",sep = "")
-rollingsales.manhattan.df <- read.csv(file = data.path , header = TRUE)
-summary(rollingsales.manhattan.df)
+source("analysis/Analysis.R")
 ```

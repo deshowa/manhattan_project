@@ -1,8 +1,7 @@
 # Author: Benjamin Reddy
 # Taken from pages 49-50 of O'Neil and Schutt
-
 require(gdata)
-require(plyr) 
+require(plyr)
 #Added by Monnie McGee
 
 
@@ -114,8 +113,7 @@ hist(sale.price.n[sale.price.n<100e6])
 
 #there's no zero's in our set
 
-hist(gross.sqft[sale.price.n==0])
-
+# hist(gross.sqft[sale.price.n==0]) # THIS STATEMENT CAUSES a FATAL Errror: Error in hist.default(gross...) : Invalid number of 'breaks' Calls: ...
 detach(bk)
 
 
