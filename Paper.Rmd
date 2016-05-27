@@ -12,7 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 Here is a summary of the Raw Data from the Rolling Sales for Manhattan
 
 ```{r summary}
-data.path <- paste("analysis/data/rollingsales_manhattan.csv",sep = "")
-rollingsales.manhattan.df <- read.csv(file = data.path , header = TRUE)
+
+readURL<-"https://raw.githubusercontent.com/deshowa/manhattan_project/master/analysis/data/rollingsales_manhattan.csv"
+
+#data.path <- paste("analysis/data/rollingsales_manhattan.csv",sep = "")
+rollingsales.manhattan.df <- read.csv(file = readURL , header = TRUE)
 summary(rollingsales.manhattan.df)
 ```
