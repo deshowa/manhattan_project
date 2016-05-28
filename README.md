@@ -10,9 +10,9 @@
 	Main.bib -> file containing bibliography data
 	Manhattan_project.Rproj -> manhattan project r-project file for this project
 	packages.bib -> packages library
-	paper_visualizations.Rmd -> rmarkdown file that read in and creates word doc (stored in papers directory) of all visuals in analysis
-	slideshow.Rmd -> slide show of visuals from analysis
-	Website.Rmd -> file that makes .html doc for the visuals from the analysis
+	Paper_visualizations_docx.Rmd -> rmarkdown file that read in and creates word doc (stored in papers directory as html) of all visuals in analysis
+	Paper_visualizations_ioslides.Rmd -> slide show of visuals from the analysis
+	Paper_visualizations_html.Rmd -> file that makes .html doc for the visuals from the analysis
 	
 
 ## ANALYSIS Directory
@@ -24,7 +24,7 @@
 ## PAPERS Directory
 	###This directory contains the visuals and analysis commentary regarding the Manhattan housing data
 	paper_meaningful_trends.txt -> file that contains an overview of the trends witnessed in the manhattan sales data
-	Paper_visualization.docx -> word document containing the visuals associated with the analysis in "paper_meaningful_trends.txt"
+	Paper_visualizations_html.html -> html document containing the visuals associated with the analysis in "paper_meaningful_trends.txt"; this was created with paper_visualizations.Rmd, but saved as an html since GitHub doesnt allow .docx
 	
 
 ## R-session info (to be added)

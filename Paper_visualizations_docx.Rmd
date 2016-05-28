@@ -1,12 +1,12 @@
 ---
-title: "Paper-Visualizations"
+title: "Rolling Sales Manhattan-visualizations - Word doc"
 output: word_document
-keep_md: true
+keep_md: yes
 ---
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r Set Python Path, include=FALSE}

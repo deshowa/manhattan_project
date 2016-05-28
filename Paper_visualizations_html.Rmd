@@ -1,5 +1,5 @@
 ---
-title: "Rolling Sales Manhattan - Website"
+title: "Rolling Sales Manhattan-visualizations - Website"
 output: html_document
 Keep_md: true
 ---
