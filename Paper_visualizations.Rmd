@@ -1,8 +1,9 @@
 ---
-title: "Paper"
+title: "Paper-Visualizations"
 output: word_document
 keep_md: true
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -20,3 +21,4 @@ Here is an analysis of the Data from the Rolling Sales for Manhattan
 ```{r summary}
 source("analysis/Analysis.R")
 ```
+

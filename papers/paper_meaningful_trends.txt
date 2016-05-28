@@ -1,0 +1,26 @@
+#Summary of Meaningful Patterns in the Dataset#
+###Please use the file: "Paper_visualizations.docx" for reference to any displays###
+
+Once we changed the sales variables to account for bad data and filtered for actual sales of 1-, 2-, nd 3- family homes, we were able to see some trends in the data.
+
+In Display 6.0, we had applied all of these filters, but a plot of gross square feet versus sales price revealed that the data was heavily concentrated.
+
+Therefore, we took the log of the same data in Display 7.0.  We see that the data appears to not have a strong log form, but tend to move in a positive diration aside from outliers.
+
+We next filtered for just 1-3 family homes in Display 8.0 and received a much more centered looking dataset.  We can see that the variances across square footage have now become very constant and the trend looks somewhat linear.
+The only troubling item in the graph now is the outliers below 5 on the y-axis
+
+After deeper investigation, these items appear to not be actual sales.  We then filtered these outliers from the dataset.
+
+Display 9.0 shows the final product.  You will see that the axes are truncated, but the overall trend does seems to be slightly positive but highly dispersed.
+
+
+In Display 10.0, we zoomed out a little bit and noticed that the trend does not appear to be consistent for the trimmed down dataset.  There are probably other factors that we would need
+to consider when looking at the prices of homes to build any kind of reliable forecast for pricing.  
+
+Even when looking at the data on a Dollar/squarefoot versus total square feet basis, there is no discernable trend.
+
+
+
+
+

@@ -91,23 +91,23 @@ bk$year.built <- as.numeric((bk$year.built))
 
 attach(bk)
 
-hist(sale.price.n) 
+hist(sale.price.n, main ='display 1.0') 
 
 # Something weird here
 
-hist(sale.price.n)
+hist(sale.price.n, main = 'display 2.0')
 
-hist(sale.price.n[sale.price.n>0])
+hist(sale.price.n[sale.price.n>0], main = 'display 3.0')
 
 #That didn't do it.  If we check summary we can see a huge range
 summary(sale.price.n)
 
 #Max is 4.1 x 10^9....yes that's billions.  So maybe the log histogram will be more informative
 
-hist(log(bk$sale.price.n, base = 10))
+hist(log(bk$sale.price.n, base = 10),main = 'display 4.0')
 
 #or we can limit the histogram to a lesser value, since quartile 3 is $2MM
-hist(sale.price.n[sale.price.n<100e6])
+hist(sale.price.n[sale.price.n<100e6], main = 'display 5.0')
 
 #but that still shows one big cluster
 
@@ -123,9 +123,9 @@ detach(bk)
 
 bk.sale <- bk[bk$sale.price.n!=0,]
 
-plot(bk.sale$gross.sqft,bk.sale$sale.price.n)
+plot(bk.sale$gross.sqft,bk.sale$sale.price.n, main ='display 6.0')
 
-plot(log(bk.sale$gross.sqft, base = 10),log(bk.sale$sale.price.n, base = 10))
+plot(log(bk.sale$gross.sqft, base = 10),log(bk.sale$sale.price.n, base = 10), main = 'display 7.0')
 
 
 
@@ -136,7 +136,7 @@ bk.homes <- bk.sale[which(grepl("FAMILY",bk.sale$building.class.category)),]
 
 dim(bk.homes)
 
-plot(log(bk.homes$gross.sqft, base = 10),log(bk.homes$sale.price.n, base =10))
+plot(log(bk.homes$gross.sqft, base = 10),log(bk.homes$sale.price.n, base =10), main = 'display 8.0')
 
 summary(bk.homes[which(bk.homes$sale.price.n<100000),])
 
@@ -150,5 +150,8 @@ bk.homes$outliers <- (log(bk.homes$sale.price.n) <=5) + 0
 
 bk.homes <- bk.homes[which(bk.homes$outliers==0),]
 
-plot(log(bk.homes$gross.sqft),log(bk.homes$sale.price.n))
+plot(log(bk.homes$gross.sqft),log(bk.homes$sale.price.n), main = 'display 9.0')
+
+plot(log(bk.homes$gross.sqft),log(bk.homes$sale.price.n), main = 'display 10.0', plot.window(xlim=(c(6,10)),ylim=(c(12,18))))
+
 
