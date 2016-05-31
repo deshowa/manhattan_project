@@ -6,18 +6,78 @@ Keep_md: true
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
-```
-
-```{r Set Python Path, include=FALSE}
+source("analysis/SetupEnvironment.R")
 PATH.0 <- Sys.getenv("PATH")
 PATH.1 <- paste(PATH.0, ";C:\\Perl\\bin;C:\\Perl64\\bin;C:\\Perl\\site\\bin;C:\\Perl64\\site\\bin")
 Sys.setenv("PATH"=PATH.1) 
 ```
 
-## Analysis of Data
-Here is an analysis of the Data from the Rolling Sales for Manhattan
+## Data Load
+Data is loaded from a local copy of Rolling Sales data for Manhattan sourced at "analysis/data/rollingsales_manhattan.csv".  This is done by calling the load script "analysis/Load.R".  The structure of the loaded data set is shown below.
+```{r load}
+source("analysis/Load.R",echo = TRUE)
+```
 
-```{r summary}
-source("analysis/Analysis.R")
+## Data Conversion and Cleanup
+The Rolling Sales data is now converted and cleaned up using the script "analysis/DataConversion.R".  The sales variables are changed to account for bad data and filtered for actual sales of 1-, 2-, nd 3- family homes.  The new structure of the converted data set is shown below.
+```{r data conversion}
+source("analysis/DataConversion.R",echo = TRUE)
+```
+
+## Sales Price Data
+We are now able to see some trends in the data. Using the script "analysis/Analysis1.R" we can generate a histogram for the sales price data.
+```{r analysis 1}
+source("analysis/Analysis1.R",echo = TRUE)
+```
+
+Using the script "analysis/Analysis2.R" we can generate a histogram for the sales price data for all sales prices greater than $0.  This plot looks the same as the prior one.
+```{r analysis 2}
+source("analysis/Analysis2.R",echo = TRUE)
+```
+
+Using the script "analysis/Analysis3.R" we can generate a summary for the sale price data.
+```{r analysis 3}
+source("analysis/Analysis3.R",echo = TRUE)
+```
+
+## Conversion of Sales Price Data to Log Scale 
+The prior plots revealed that the data was heavily concentrated therefore, we took the log of the same data.  Using the script "analysis/Analysis4.R" we can generate a histogram for the sales price data on a log scale (base 10). We see that the data appears to not have a strong log form, but tend to move in a positive diration aside from outliers.
+```{r analysis 4}
+source("analysis/Analysis4.R")
+```
+
+We can limit the histogram to a lesser value, since quartile 3 is $2MM.  Using the script "analysis/Analysis5.R" we can generate a histogram for the sales price data on a log scale (base 10) less than 100e6.
+```{r analysis 5}
+source("analysis/Analysis5.R", echo = TRUE)
+```
+
+But that still shows one big cluster.  Using the script "analysis/Analysis6.R" we can see though that there are no zero's in our set.  
+```{r analysis 6}
+source("analysis/Analysis6.R",echo = TRUE)
+```
+
+## Further Analysis
+Further Analysis can now be done.  Using the script "analysis/Analysis7.R" we can get only records from the sales price data that have non-zero values.  A summary of the data set is shown below.  
+```{r analysis 7}
+source("analysis/Analysis7.R", echo = TRUE)
+```
+
+Using the script "analysis/Analysis8.R" we can plot Sales Prices versus Gross Square Footage.
+```{r analysis 8}
+source("analysis/Analysis8.R", echo = TRUE)
+```
+
+Using the script "analysis/Analysis9.R" we can plot Sales Prices versus Gross Square Footage on a log scale.
+```{r analysis 9}
+source("analysis/Analysis9.R", echo = TRUE)
+```
+
+Using the script "analysis/Analysis10.R" we can again plot Sales Prices versus Gross Square Footage but filter for homes which have family in the class type to receive a much more centered looking dataset.  We can see that the variances across square footage have now become very constant and the trend looks somewhat linear. The only troubling item in the graph now is the outliers below 5 on the y-axis.
+```{r analysis 10}
+source("analysis/Analysis10.R", echo = TRUE)
+```
+
+Using the script "analysis/Analysis11.R" we can see a summary for homes with family in the class type. 
+```{r analysis 11}
+source("analysis/Analysis11.R", echo = TRUE)
 ```

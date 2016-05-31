@@ -2,6 +2,6 @@
 
 #there's no zero's in our set
 
-hist(gross.sqft[sale.price.n==0])
-
+#hist(gross.sqft[sale.price.n==0])
+count(sale.price.n==0)
 detach(bk)
