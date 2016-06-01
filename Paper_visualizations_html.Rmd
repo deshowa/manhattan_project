@@ -1,5 +1,8 @@
 ---
 title: "Rolling Sales Manhattan-visualizations - Website"
+knit: (function(inputFile, encoding) { 
+      rmarkdown::render(inputFile,
+                        encoding=encoding,                         output_file='papers/Paper_visualizations_html.html') } )
 output: html_document
 Keep_md: true
 ---

@@ -2,9 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
-*.html
-*.htm
-*.doc
-*.docx
-Paper_files/*
-Slideshow_files/*
+papers/Paper_files/*
+papers/Slideshow_files/*
